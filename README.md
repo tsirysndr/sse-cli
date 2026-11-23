@@ -70,3 +70,13 @@ bun run start https://sse.rocksky.app/events/scrobbles
 bun test
 bun run typecheck
 ```
+
+## Publishing
+
+`npm pack` and `npm publish` automatically build the CLI through the `prepack`
+script. The package includes `dist/sse.js`, the README, and the MIT license.
+
+```sh
+npm version patch
+npm publish --access public
+```
