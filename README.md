@@ -4,10 +4,30 @@ A Bun CLI that streams all SSE event types until Ctrl-C. JSON payloads are
 pretty-printed with syntax colors in terminals; other payloads stay plain text.
 Event types and IDs appear above each payload. Connection messages go to stderr.
 
+## Quick start
+
+Run the published package directly without a global install:
+
 ```sh
-bun install
-bun run start --help
-bun run start https://sse.rocksky.app/events/scrobbles
+npx @tsiry/sse https://sse.rocksky.app/events/scrobbles
+
+# Or with Bun
+bunx @tsiry/sse https://sse.rocksky.app/events/scrobbles
+```
+
+[Bun](https://bun.com) is required for both commands because the CLI uses the Bun runtime.
+Press Ctrl-C to stop streaming.
+
+```sh
+npx @tsiry/sse --help
+bunx @tsiry/sse --no-color https://sse.rocksky.app/events/scrobbles
+```
+
+You can also install the CLI globally:
+
+```sh
+npm install -g @tsiry/sse
+sse https://sse.rocksky.app/events/scrobbles
 ```
 
 ## Build
@@ -45,6 +65,8 @@ exit with an error. SSE comments and control fields do not print as events.
 ## Development
 
 ```sh
+bun install
+bun run start https://sse.rocksky.app/events/scrobbles
 bun test
 bun run typecheck
 ```
