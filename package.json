@@ -1,0 +1,23 @@
+{
+  "name": "@tsiry/sse",
+  "license": "MIT",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "bun check",
+    "start": "bun run index.ts",
+    "build": "bun build index.ts --target=bun --outfile=dist/sse.js",
+    "build:binary": "bun build index.ts --compile --outfile=dist/sse",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "bin": {
+    "sse": "dist/sse.js"
+  }
+}
