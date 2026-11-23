@@ -1,6 +1,10 @@
 {
   "name": "@tsiry/sse",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsirysndr/sse-cli.git"
+  },
   "module": "index.ts",
   "type": "module",
   "private": true,
